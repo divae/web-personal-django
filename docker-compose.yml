@@ -11,7 +11,7 @@ services:
     command: bash -c "npm run cache && tail -f /e2e/logs/cypress.log"
   app:
     build:
-      context: .
+      context: ./app
     ports:
       - "8000:8000"
     volumes:
