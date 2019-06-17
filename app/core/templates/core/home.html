@@ -2,7 +2,15 @@
 
 {% block title %}Portada{% endblock %}
 
-{% block content %}
-<h2>Portada</h2>
-hi
+{% block background %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
+
+{% include "core/header.html" %}
+{% block header %}
+  <h1>Estela Medrano</h1>
+  <span class="subheading">Desarrolladora Web</span>
+{% endblock %}
+
+{% block content %}   
+  <h2>Portada</h2>
+  <p>Hola</p>
 {% endblock %}
