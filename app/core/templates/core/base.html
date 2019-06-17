@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}{% endblock %} | Mi web personal</title>
-</head>
 
-<body>
-    <!-- head and menu -->
-    <h1>Mi web personal</h1>
-    <ul>
-        <li><a href="{% url 'home' %}">Portada</a></li>
-        <li><a href="{% url 'about' %}">About</a></li>
-        <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
-        <li><a href="{% url 'contact' %}">Contact</a></li>
-    </ul>
-    <!-- content -->
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% block title %}{% endblock %} | Estela Medrano</title>
+    {% load static %}
+    <!-- Estilos y fuentes del template  -->
+    <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href="{% static '/core/css/clean-blog.min.css' %}" rel="stylesheet %}">
+
+  </head>
+
+  <body>
+    
+    {% include "core/navegation.html" %}
+    {% block navbar %}{% endblock %}
+  <!-- Cabecera -->
+    {% load static %}
+    <header class="masthead" style="background-image: url('{% block background %}{% endblock %}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              {% block header %}{% endblock %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
     {% block content %}{% endblock %}
-</body>
+
+    {% include "core/footer.html" %}
+    {% block footer %}{% endblock %}
+
+    <!-- Bootstrap y Javascripts -->
+    {% include "core/javascripts.html" %}
+    {% block javascripts %}{% endblock %}
+
+  </body>
 
 </html>
