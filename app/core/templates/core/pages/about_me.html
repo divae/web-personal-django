@@ -2,9 +2,24 @@
 
 {% block title %}Sobre mí{% endblock %}
 
-{% block content %}
+{% block background %}{% load static %}{% static 'core/img/about-bg.jpg' %}{% endblock %}
 
-<h2>About me</h2>
-hi
+{% include "core/header.html" %}
+
+{% block content %}
+    <!-- Contenido Principal -->
+    <div class="container">
+      <div class="row">   
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+          <img class="img-fluid avatar" src="{% load static %}{% static 'core/img/avatar_estela.jpg' %}" alt="">
+        </div>
+        <div class="col-lg-7 col-md-8">
+          <h2 class="section-heading">Estela Medrano</h2>   
+          <p>Nacida en Valencia (Mislata) lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit...</p>
+        </div>
+      </div>  
+    </div>
+
 {% endblock %}
 
